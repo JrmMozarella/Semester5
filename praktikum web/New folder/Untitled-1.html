@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Data Barang</title>
+  </head>
+  <body>
+    <h2>Form Input Data Barang</h2>
+
+    <form action="#" method="post" id="inputForm" onsubmit="submitForm()">
+      <label for="kode">Kode Barang:</label>
+      <input type="text" id="kode" name="kode" required />
+      <br />
+
+      <label for="barang">Nama Barang:</label>
+      <input type="text" id="barang" name="barang" required />
+      <br />
+
+      <label for="harga">Harga Barang:</label>
+      <input type="number" id="harga" name="harga" required />
+      <br />
+
+      <label for="jumlah">Jumlah Barang:</label>
+      <input type="number" id="jumlah" name="jumlah" required />
+      <br />
+
+      <input type="submit" value="Simpan" />
+    </form>
+
+    <script>
+      function submitForm() {
+        // Mendapatkan nilai input dari formulir
+        var kodeBarang = document.getElementById("kode").value;
+        var namaBarang = document.getElementById("barang").value;
+        var hargaBarang = document.getElementById("harga").value;
+        var jumlahBarang = document.getElementById("jumlah").value;
+
+        // Menghitung total harga
+        var totalHarga = hargaBarang * jumlahBarang;
+
+        // Menampilkan hasil menggunakan window.alert
+        var resultMessage =
+          "Kode Barang: " +
+          kodeBarang +
+          "\nNama Barang: " +
+          namaBarang +
+          "\nHarga Barang: " +
+          hargaBarang +
+          "\nJumlah Barang: " +
+          jumlahBarang +
+          "\nTotal Harga: " +
+          totalHarga;
+
+        window.alert(resultMessage);
+
+        // Menghentikan pengiriman formulir
+        event.preventDefault();
+      }
+    </script>
+  </body>
+</html>
